@@ -12,8 +12,6 @@
     <!-- Plugin Stylesheets first to ease overrides -->
     <link rel="stylesheet" type="text/css" href="{{ asset('plugins/colorpicker/colorpicker.css') }}" media="screen">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/fullcalendar/fullcalendar.css') }}" media="screen">
-    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/fullcalendar/fullcalendar.print.css') }}" media="print">
 
     <!-- Required Stylesheets -->
     <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.min.css') }}" media="screen">
@@ -34,6 +32,23 @@
     <!-- Theme Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/mws-theme.css') }}" media="screen">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/themer.css') }}" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/table.css') }}" media="screen">
+
+    <link rel="stylesheet" href="{{ asset('cal/components/bootstrap2/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('cal/components/bootstrap2/css/bootstrap-responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('cal/css/calendar.css') }}">
+
+    <style type="text/css">
+        .btn-twitter {
+            padding-left: 30px;
+            background: rgba(0, 0, 0, 0) url(https://platform.twitter.com/widgets/images/btn.27237bab4db188ca749164efd38861b0.png) -20px 6px no-repeat;
+            background-position: -20px 11px !important;
+        }
+        .btn-twitter:hover {
+            background-position:  -20px -18px !important;
+        }
+    </style>
 
 
     <title>SPIS</title>
