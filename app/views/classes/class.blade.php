@@ -506,6 +506,9 @@
 
 
 <!--dynamic table initialization -->
-<script src="{{ asset('js/dynamic_table_init.js') }}"></script>
+<script src="{{ asset('js/dynamic_table_init.js') }}">
+
+</script>
+</div></div>
 
 @stop
