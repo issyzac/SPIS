@@ -35,9 +35,10 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/table.css') }}" media="screen">
 
-    <link rel="stylesheet" href="{{ asset('cal/components/bootstrap2/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('cal/components/bootstrap2/css/bootstrap-responsive.css') }}">
-    <link rel="stylesheet" href="{{ asset('cal/css/calendar.css') }}">
+    <!-- Calendar styles -->
+     <link rel="stylesheet" type="text/css" media="all" href="{{ asset('css/daterangepicker-bs3.css') }}" /><!-- Date Range Picker -->
+     <link href="{{ asset('css/fullcalendar.css') }}" rel="stylesheet" /><!-- Full calendar -->
+     <link href="{{ asset('css/fullcalendar.print.css') }}" rel="stylesheet" media="print" /><!-- Full Calendar -->
 
     <style type="text/css">
         .btn-twitter {
@@ -322,10 +323,99 @@
 <!-- Plugin Scripts -->
 <script src="{{ asset('plugins/fullcalendar/fullcalendar.min.js') }}"></script>
 <script src="{{ asset('plugins/colorpicker/colorpicker-min.js') }}"></script>
+<script src="{{ asset('plugins/js/moment.js') }}"></script> <!-- Date Range Picker -->
+<script src="{{ asset('plugins/js/daterangepicker.js') }}"></script><!-- Date Range Picker -->
 
 
 <!-- Demo Scripts (remove if not needed) -->
 <script src="{{ asset('js/demo/demo.dashboard.js') }}"></script>
+
+ <script>
+
+                        	$(document).ready(function() {
+
+                        		var date = new Date();
+                        		var d = date.getDate();
+                        		var m = date.getMonth();
+                        		var y = date.getFullYear();
+
+                        		var calendar = $('#calendar').fullCalendar({
+                        			header: {
+                        				left: 'prev,next today',
+                        				center: 'title',
+                        				right: 'month,agendaWeek,agendaDay'
+                        			},
+                        			selectable: true,
+                        			selectHelper: true,
+                        			select: function(start, end, allDay) {
+                        				var title = prompt('Event Title:');
+                        				if (title) {
+                        					calendar.fullCalendar('renderEvent',
+                        						{
+                        							title: title,
+                        							start: start,
+                        							end: end,
+                        							allDay: allDay
+                        						},
+                        						true // make the event "stick"
+                        					);
+                        				}
+                        				calendar.fullCalendar('unselect');
+                        			},
+                        			editable: true,
+                        			events: [
+                        				{
+                        					title: 'All Day Event',
+                        					start: new Date(y, m, 1)
+                        				},
+                        				{
+                        					title: 'Long Event',
+                        					start: new Date(y, m, d-5),
+                        					end: new Date(y, m, d-2)
+                        				},
+                        				{
+                        					id: 999,
+                        					title: 'Repeating Event',
+                        					start: new Date(y, m, d-3, 16, 0),
+                        					allDay: false
+                        				},
+                        				{
+                        					id: 999,
+                        					title: 'Repeating Event',
+                        					start: new Date(y, m, d+4, 16, 0),
+                        					allDay: false
+                        				},
+                        				{
+                        					title: 'Meeting',
+                        					start: new Date(y, m, d, 10, 30),
+                        					allDay: false
+                        				},
+                        				{
+                        					title: 'Lunch',
+                        					start: new Date(y, m, d, 12, 0),
+                        					end: new Date(y, m, d, 14, 0),
+                        					allDay: false
+                        				},
+                        				{
+                        					title: 'Birthday Party',
+                        					start: new Date(y, m, d+1, 19, 0),
+                        					end: new Date(y, m, d+1, 22, 30),
+                        					allDay: false
+                        				},
+                        				{
+                        					title: 'Click for Google',
+                        					start: new Date(y, m, 28),
+                        					end: new Date(y, m, 29),
+                        					url: 'http://google.com/'
+                        				}
+                        			]
+                        		});
+
+                        	});
+
+                        </script>
+
+
 
 </body>
 </html>
