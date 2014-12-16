@@ -25,6 +25,8 @@
     <!-- Demo Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}" media="screen">
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/table.css') }}" media="screen">
+
     <!-- jQuery-UI Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{{ asset('jui/css/jquery.ui.all.css') }}" media="screen">
     <link rel="stylesheet" type="text/css" href="{{ asset('jui/jquery-ui.custom.css') }}" media="screen">
@@ -249,7 +251,7 @@
             <li><a href='{{ url("classes") }}'><i class="icon-graph"></i> Classes</a></li>
             <li><a href="calendar.html"><i class="icon-calendar"></i> Subjects</a></li>
             <li><a href="files.html"><i class="icon-folder-closed"></i> Users </a></li>
-            <li><a href="table.html"><i class="icon-table"></i> Results</a></li>
+            <li><a href='{{ url("results") }}'><i class="icon-table"></i> Results</a></li>
             <li>
                 <a href="#"><i class="icon-list"></i> Others</a>
                 <ul>

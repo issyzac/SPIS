@@ -21,7 +21,10 @@ Route::get('dashboard', function()
     return View::make('dashboard');
 });
 
-
+Route::get('results', function()
+{
+    return View::make('results.resultIndex');
+});
 
 Route::get('classes', function()
 {
